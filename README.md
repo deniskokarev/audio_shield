@@ -1,5 +1,17 @@
 # STM32 Nucleo Audio Amplifier Shield
 
+**A toy project for agentic development**
+
+Exercises all stages or product prototyping:
+- schematics
+- SPICE simulation from CSV input into CSV (or WAV)
+- schematics -> PCB
+
+firmware:
+- Zephyr POSIX DAC driver to capture DAC output stream into CSV
+- Zephyr main that generates sound
+- we can add virtual BLE capabilities with Aroid running in QEMU using Bumble
+
 A compact, Arduino Uno R3-form-factor audio shield that amplifies the analog output of an MCU DAC. The board is designed around the STM32 NUCLEO-L476RG, using its `A2` header pin (`PA4`, DAC channel 1) as the audio source.
 
 The current design is a single-channel (mono) output stage. It buffers the DAC signal with an OPA340 rail-to-rail op-amp, attenuates and AC-couples the signal into an LM386 audio power amplifier, and routes the amplified output through a coupling capacitor to a 3.5 mm jack.
